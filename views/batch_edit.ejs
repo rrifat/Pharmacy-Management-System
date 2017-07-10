@@ -1,0 +1,48 @@
+<% include inc/view_header %>
+<% include inc/view_topmenu %>
+<% include inc/view_sidebar %>
+
+<div id="page-wrapper">
+
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header text-center">
+                    Edit Batch Information
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <div class="col-lg-5 col-lg-offset-3">
+            <form action="" method="post">
+                    <div class="form-group">
+                    <label for="sellPrice">Sell Price</label>
+                    <input type="text" class="form-control" id="sellPrice" name="sellPrice"
+                    value="<%= batchInfoEdit.Sell_Price %>">
+            </div>
+            <br/>
+            <input type="submit" class="btn btn-primary" name="submit" value="Update">
+            </form>
+            </div>
+        </div>
+
+        <br />
+        <br />
+        <div class="container" style="float: left; font-size:17px;">
+          <a href="/admin/category">Back to List </a>
+        </div>
+        <!-- /.row -->
+        <br>
+        <hr>
+
+    </div>
+    <!-- /.container-fluid -->
+
+</div>
+<!-- /#page-wrapper -->
+
+<% include inc/view_footer.ejs %>

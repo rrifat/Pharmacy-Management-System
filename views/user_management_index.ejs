@@ -1,0 +1,86 @@
+<% include inc/view_header %>
+<% include inc/view_topmenu %>
+<% include inc/view_sidebar %>
+<div id="page-wrapper">
+
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header text-center">
+                    List of User Information
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+        <div class="container" style="float: left; font-size:17px;">
+          <a href="/admin/usermanagement/create">Create</a>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-5 col-lg-offset-3">
+
+            </div>
+        </div>
+        <!-- /.row -->
+        <br>
+        <hr>
+        <div class="row">
+            <div class="col-lg-12">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Gender</th>
+                        <th>Date of Birth</th>
+                        <th>Age</th>
+                        <th>Address</th>
+                        <th>Contact</th>
+                        <th>Blood Group</th>
+                        <th>Marital Status</th>
+                        <th>Joining Date</th>
+                        <th>Salary</th>
+                        <th>Username</th>
+                        <th>Password</th>
+                        <th>Usertype</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <% userInformation.forEach(function(item){ %>
+                    <tr>
+                        <td><%= item.Name %></td>
+                        <td><%= item.Email %></td>
+                        <td><%= item.Gender %></td>
+                        <td><%= item.Date_of_Birth %></td>
+                        <td><%= item.Age %></td>
+                        <td><%= item.Address %></td>
+                        <td><%= item.Contact %></td>
+                        <td><%= item.Blood_Group %></td>
+                        <td><%= item.Marital_Status %></td>
+                        <td><%= item.Join_Date %></td>
+                        <td><%= item.Salary %></td>
+                        <td><%= item.Username %></td>
+                        <td><%= item.Password %></td>
+                        <td><%= item.Usertype %></td>
+                        <td><a href="/admin/usermanagement/edit/<%= item.Username %>">Edit |</a>
+                        <a href="/admin/usermanagement/delid=<%= item.Username %>" onclick="return confirm('Are You Sure to Delete?')">Delete</a></td>
+                    </tr>
+                    <% }) %>
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container-fluid -->
+
+</div>
+<!-- /#page-wrapper -->
+
+
+
+<% include inc/view_footer.ejs %>

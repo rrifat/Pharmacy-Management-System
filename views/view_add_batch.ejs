@@ -1,0 +1,76 @@
+<% include inc/view_header %>
+<% include inc/view_topmenu %>
+<% include inc/view_sidebar %>
+<div id="page-wrapper">
+
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header text-center">
+                    Add Batch
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <div class="col-lg-5 col-lg-offset-3">
+
+                <form action="" method="post">
+                    <div class="form-group">
+                        <label for="batch_id">Batch Id</label>
+                        <input type="text" class="form-control" id="batch_id" name="batch_id">
+                    </div>
+                    <div class="form-group">
+                        <label for="stored_qty">Quantity</label>
+                        <input type="number" class="form-control" name="stored_qty" id="stored_qty">
+                    </div>
+                    <div class="form-group">
+                        <label for="cost_price">Cost Price</label>
+                        <input type="text" class="form-control" name="cost_price" id="cost_price">
+                    </div>
+                    <div class="form-group">
+                        <label for="sell_price">Sell Price</label>
+                        <input type="text" class="form-control" name="sell_price" id="sell_price">
+                    </div>
+                    <div class="form-group">
+                        <label for="production_date">Production Date</label>
+                        <input type="text" class="form-control" name="production_date" id="production_date"
+                               onkeydown="return false">
+                    </div>
+                    <div class="form-group">
+                        <label for="expire_date">Expire Date</label>
+                        <input type="text" class="form-control" name="expire_date" id="expire_date"
+                               onkeydown="return false">
+                    </div>
+                    <div class="form-group">
+                        <label for="purchase_id">Purchase Id</label>
+                        <input type="text" class="form-control" name="purchase_id" id="purchase_id">
+                    </div>
+                    <div class="form-group">
+                        <label for="role">Medicine Name</label>
+                        <select class="form-control" id="medicine_id" name="medicine_id">
+
+
+                            <option value="<%= mname.medicine_id %>"> <%= mname.mdicine_name %> </option>
+
+
+                        </select>
+                    </div>
+                    <input type="submit" class="btn btn-default" name="submit" value="Add">
+                </form>
+
+            </div>
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container-fluid -->
+
+</div>
+<!-- /#page-wrapper -->
+
+
+<% include inc/view_footer.ejs %>

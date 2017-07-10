@@ -1,0 +1,77 @@
+<% include inc/view_header %>
+<% include inc/view_topmenu %>
+<% include inc/view_sidebar %>
+
+<div id="page-wrapper">
+
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header text-center">
+                    Edit User Information
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <div class="col-lg-5 col-lg-offset-3">
+            <form action="" method="post">
+                    <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="name"
+                    value="<%= userInfoEdit.Name %>">
+            </div>
+            <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" class="form-control" name="email" id="email"
+                    value="<%= userInfoEdit.Email %>">
+            </div>
+
+            <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="text" class="form-control" name="age" id="age"
+                    value="<%= userInfoEdit.Age %>">
+            </div>
+
+            <div class="form-group">
+                    <label for="address">Address</label>
+                    <input type="text" class="form-control" name="address" id="address"
+                    value="<%= userInfoEdit.Address %>">
+            </div>
+
+            <div class="form-group">
+                    <label for="contact">Contact</label>
+                    <input type="text" class="form-control" name="contact" id="contact"
+                    value="<%= userInfoEdit.Contact %>">
+            </div>
+
+            <div class="form-group">
+                    <label for="salary">Salary</label>
+                    <input type="text" class="form-control" name="salary" id="salary"
+                    value="<%= userInfoEdit.Salary %>">
+            </div>
+            <br/>
+            <input type="submit" class="btn btn-primary" name="submit" value="Update">
+            </form>
+            </div>
+        </div>
+
+        <br />
+        <br />
+        <div class="container" style="float: left; font-size:17px;">
+          <a href="/admin/usermanagement">Back to List </a>
+        </div>
+        <!-- /.row -->
+        <br>
+        <hr>
+
+    </div>
+    <!-- /.container-fluid -->
+
+</div>
+<!-- /#page-wrapper -->
+
+<% include inc/view_footer.ejs %>

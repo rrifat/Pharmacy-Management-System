@@ -1,0 +1,63 @@
+<% include inc/view_header %>
+<% include inc/view_topmenu %>
+<% include inc/view_sidebar %>
+<div id="page-wrapper">
+
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header text-center">
+                    List of Manufacturer Information
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+        <div class="container" style="float: left; font-size:17px;">
+          <a href="/admin/manufacturer/create">Create</a>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-5 col-lg-offset-3">
+
+
+            </div>
+        </div>
+        <!-- /.row -->
+        <br>
+        <hr>
+        <div class="row">
+            <div class="col-lg-12">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Manufacturer Name</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <% manufacturer.forEach(function(item){ %>
+                    <tr>
+                        <td><%= item.ID %></td>
+                        <td><%= item.Manufacturer_Name %></td>
+                        <td><a href="/admin/manufacturer/edit/<%= item.ID %>">Edit |</a>
+                        <a href="/admin/manufacturer/delid=<%= item.ID %>" onclick="return confirm('Are You Sure to Delete?')">Delete</a></td>
+                    </tr>
+                    <% }) %>
+                    </tbody>
+                    
+                </table>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container-fluid -->
+
+</div>
+<!-- /#page-wrapper -->
+
+
+
+<% include inc/view_footer.ejs %>

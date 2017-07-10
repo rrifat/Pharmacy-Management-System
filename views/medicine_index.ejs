@@ -1,0 +1,66 @@
+<% include inc/view_header %>
+<% include inc/view_topmenu %>
+<% include inc/view_sidebar %>
+<div id="page-wrapper">
+
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header text-center">
+                    List of Medicine Information
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+        <div class="container" style="float: left; font-size:17px;">
+          <a href="/admin/medicine/create">Create</a>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-5 col-lg-offset-3">
+
+
+            </div>
+        </div>
+        <!-- /.row -->
+        <br>
+        <hr>
+        <div class="row">
+            <div class="col-lg-12">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Medicine Name</th>
+                        <th>Category</th>
+                        <th>Generic Name</th>
+                        <th>Manufacturer Name</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <% medicine.forEach(function(item){ %>
+                    <tr>
+                        <td><%= item.Medicine_Name %></td>
+                        <td><%= item.Category %></td>
+                        <td><%= item.Generic_Name %></td>
+                        <td><%= item.Manufacturer_Name %></td>
+                        <td><a href="/admin/medicine/edit/<%= item.ID %>">Edit |</a>
+                          <a href="/admin/medicine/delid=<%= item.ID %>" onclick="return confirm('Are You Sure to Delete?')">Delete</a></td>
+                    </tr>
+                    <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container-fluid -->
+
+</div>
+<!-- /#page-wrapper -->
+
+
+
+<% include inc/view_footer.ejs %>

@@ -1,0 +1,93 @@
+<% include inc/view_header %>
+<% include inc/view_topmenu %>
+<% include inc/view_sidebar %>
+
+<div id="page-wrapper">
+
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header text-center">
+                    Edit Medicine
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <div class="col-lg-5 col-lg-offset-3">
+
+              <form action="" method="POST">
+
+                <div class="form-group">
+                  <label for="med_name">Medicine Name</label>
+                  <input type="text" class="form-control" id="medicine_name" name="medicine_name"
+                  placeholder="Medicine Name" value="<%= medInfo.Medicine_Name %>">
+                </div>
+
+                <div class="form-group">
+                    <label for="sel1">Select Category</label>
+                    <select class="form-control" id="categoryname" name="categoryname">
+                        <% cateName.forEach(function(item){ %>
+                        <option
+                        <% if (item.ID == medInfo.Category_ID) { %>
+                        selected="selected"
+                        <% } %> value="<%= item.ID %>" >
+                        <%= item.Category %>
+                        </option>
+                        <% }) %>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="sel1">Select Generic Name</label>
+                    <select class="form-control" id="genericName" name="genericName">
+                        <% dGenericName.forEach(function(item){ %>
+                        <option
+                        <% if (item.ID == medInfo.GENERIC_ID) { %>
+                        selected="selected"
+                        <% } %> value="<%= item.ID %>" >
+                        <%= item.Generic_Name %>
+                        </option>
+                        <% }) %>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="sel1">Select Manufacturer Name</label>
+                    <select class="form-control" id="manuName" name="manuName">
+                        <% manuName.forEach(function(item){ %>
+                        <option
+                        <% if (item.ID == medInfo.MANUFACTURER_ID) { %>
+                        selected="selected"
+                        <% } %> value="<%= item.ID %>" >
+                        <%= item.Manufacturer_Name %>
+                        </option>
+                        <% }) %>
+                    </select>
+                </div>
+
+                <input type="submit" class="btn btn-primary" name="submit" value="Update">
+
+                </form>
+            </div>
+        </div>
+        <br />
+        <br />
+        <div class="container" style="float: left; font-size:17px;">
+          <a href="/admin/medicine">Back to List </a>
+        </div>
+        <!-- /.row -->
+        <br>
+        <hr>
+
+    </div>
+    <!-- /.container-fluid -->
+
+
+</div>
+<!-- /#page-wrapper -->
+
+<% include inc/view_footer.ejs %>

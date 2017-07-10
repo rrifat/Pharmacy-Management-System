@@ -1,0 +1,54 @@
+<% include inc/view_header %>
+<% include inc/view_topmenu %>
+<% include inc/view_sidebar %>
+
+<div id="page-wrapper">
+
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header text-center">
+                    Add Generic Name
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <div class="col-lg-5 col-lg-offset-3">
+
+                <form action="" method="POST">
+                    <div class="form-group">
+                        <label for="med_name">Generic Name</label>
+                        <input type="text" class="form-control" id="generic_name" name="generic_name"
+                               placeholder="Generic Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="med_category">Description</label>
+                        <input type="text" class="form-control" id="description" " name="description"
+                               placeholder="Description">
+                        
+                    </div>
+                    <input type="submit" class="btn btn-primary" name="submit" value="Create">
+            </form>
+            </div>
+        </div>
+        <br />
+        <br />
+        <div class="container" style="float: left; font-size:17px;">
+          <a href="/admin/genericname">Back to List </a>
+        </div>
+        <!-- /.row -->
+        <br>
+        <hr>
+
+    </div>
+    <!-- /.container-fluid -->
+
+
+</div>
+<!-- /#page-wrapper -->
+
+<% include inc/view_footer.ejs %>

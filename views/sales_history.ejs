@@ -1,0 +1,67 @@
+<% include inc/view_header %>
+<% include inc/view_topmenu %>
+<% include inc/view_sidebar %>
+<div id="page-wrapper">
+
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header text-center">
+                    Sales History
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <div class="col-lg-5 col-lg-offset-3">
+
+            </div>
+        </div>
+        <!-- /.row -->
+        <br>
+        <hr>
+        <div class="row">
+            <div class="col-lg-12">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Invoice Number</th>
+                        <th>Date</th>
+                        <th>Total Amount</th>
+                        <th>Discount(%)</th>
+                        <th>Discount Amount</th>
+                        <th>Total Payable</th>
+                        <th>Paid</th>
+                        <th>Return</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <% billInfo.forEach(function(item){ %>
+                    <tr>
+                        <td><%= item.Invoice_No %></td>
+                        <td><%= item.Date %></td>
+                        <td><%= item.Total_Amount %></td>
+                        <td><%= item.Discount %></td>
+                        <td><%= item.Discount_Amount %></td>
+                        <td><%= item.Total_Payable %></td>
+                        <td><%= item.Paid %></td>
+                        <td><%= item.Returned %></td>
+                    </tr>
+                    <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container-fluid -->
+
+</div>
+<!-- /#page-wrapper -->
+
+
+
+<% include inc/view_footer.ejs %>

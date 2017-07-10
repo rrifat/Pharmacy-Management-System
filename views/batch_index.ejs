@@ -1,0 +1,73 @@
+<% include inc/view_header %>
+<% include inc/view_topmenu %>
+<% include inc/view_sidebar %>
+<div id="page-wrapper">
+
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header text-center">
+                    List of Batch Details
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+        <div class="container" style="float: left; font-size:17px;">
+          <a href="/admin/batch/create">Create</a>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-5 col-lg-offset-3">
+
+            </div>
+        </div>
+        <!-- /.row -->
+        <br>
+        <hr>
+        <div class="row">
+            <div class="col-lg-12">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Batch ID</th>
+                        <th>Medicine Name</th>
+                        <th>Quantity</th>
+                        <th>Cost Price</th>
+                        <th>Sell Price</th>
+                        <th>Production Date</th>
+                        <th>Expire Date</th>
+                        <th>Supplier Name</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <% batch.forEach(function(item){ %>
+                    <tr>
+                        <td><%= item.Batch_ID %></td>
+                        <td><%= item.Medicine_Name %></td>
+                        <td><%= item.Quantity %></td>
+                        <td><%= item.Cost_Price %></td>
+                        <td><%= item.Sell_Price %></td>
+                        <td><%= item.Production_Date %></td>
+                        <td><%= item.Expire_Date %></td>
+                        <td><%= item.Supplier_Name %></td>
+                        <td><a href="/admin/batch/edit/<%= item.Batch_ID %>">Edit |</a>
+                        <a href="/admin/batch/delid=<%= item.Batch_ID %>" onclick="return confirm('Are You Sure to Delete?')">Delete</a></td>
+                    </tr>
+                    <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container-fluid -->
+
+</div>
+<!-- /#page-wrapper -->
+
+
+
+<% include inc/view_footer.ejs %>

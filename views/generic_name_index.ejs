@@ -1,0 +1,63 @@
+<% include inc/view_header %>
+<% include inc/view_topmenu %>
+<% include inc/view_sidebar %>
+<div id="page-wrapper">
+
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header text-center">
+                    List of Generic Name
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+        <div class="container" style="float: left; font-size:17px;">
+          <a href="/admin/genericname/create">Create</a>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-5 col-lg-offset-3">
+
+               
+
+            </div>
+        </div>
+        <!-- /.row -->
+        <br>
+        <hr>
+        <div class="row">
+            <div class="col-lg-12">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Generic Name</th>
+                        <th>Description</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <% generic.forEach(function(item){ %>
+                    <tr>
+                        <td><%= item.Generic_Name %></td>
+                        <td><%= item.Description %></td>
+                        <td><a href="/admin/genericname/edit/<%= item.ID %>">Edit |</a>
+                        <a href="/admin/genericname/delid=<%= item.ID %>" onclick="return confirm('Are You Sure to Delete?')">Delete</a></td>
+                    </tr>
+                    <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container-fluid -->
+
+</div>
+<!-- /#page-wrapper -->
+
+
+
+<% include inc/view_footer.ejs %>

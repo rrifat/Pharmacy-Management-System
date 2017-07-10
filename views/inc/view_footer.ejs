@@ -1,0 +1,54 @@
+</div>
+<!-- /#wrapper -->
+
+<!-- jQuery -->
+<script src="/assets/js/jquery-3.2.1.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+
+
+
+    $( function() {
+
+
+
+        $( "#user_dob" ).datepicker({ dateFormat: 'yy-mm-dd' });
+        $( "#join_date" ).datepicker({ dateFormat: 'yy-mm-dd' });
+        $( "#production_date" ).datepicker({ dateFormat: 'yy-mm-dd' });
+        $( "#expire_date" ).datepicker({ dateFormat: 'yy-mm-dd' });
+        $( "#entry_date" ).datepicker({ dateFormat: 'yy-mm-dd' });
+
+
+        /*$("#production_date").datepicker({
+            numberOfMonths: 1,
+            onSelect: function (selected) {
+                var dt = new Date(selected);
+                dt.setDate(dt.getDate() + 1);
+                $("#expire_date").datepicker("option", "minDate", dt);
+            }
+        });
+        $("#expire_date").datepicker({
+            numberOfMonths: 1,
+            onSelect: function (selected) {
+                var dt = new Date(selected);
+                dt.setDate(dt.getDate() - 1);
+                $("#production_date").datepicker("option", "maxDate", dt);
+            }
+        });*/
+
+    });
+
+
+
+
+
+</script>
+
+
+</body>
+
+</html>

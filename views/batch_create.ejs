@@ -1,0 +1,99 @@
+<% include inc/view_header %>
+<% include inc/view_topmenu %>
+<% include inc/view_sidebar %>
+
+
+<div id="page-wrapper">
+
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header text-center">
+                    Add New Medicine Batch
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <div class="col-lg-5 col-lg-offset-3">
+
+                <form action="" method="POST" id="myForm">
+                    <div class="form-group">
+                        <label for="batch_id">Batch ID</label>
+                        <input type="text" class="form-control" id="batch_id" name="batch_id"
+                               placeholder="Batch ID">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="supplier_name">Supplier Name</label>
+                        <select class="form-control" id="supplier_name" name="supplier_name">
+                        <option> Select Supplier Name </option>
+                        <% suppliername.forEach(function(item){ %>
+                        <option value="<%= item.ID %>"> <%= item.Supplier_Name %> </option>
+                        <% }) %>
+                    </select>
+                  </div>
+
+                    <div class="form-group">
+                        <label for="medicine_name">Medicine Name</label>
+                        <select class="form-control" id="medicine_name" name="medicine_name">
+                        <option> Select Medicine Name </option>
+                        <% medicinename.forEach(function(item){ %>
+                        <option value="<%= item.ID %>"> <%= item.Medicine_Name %> </option>
+                        <% }) %>
+                    </select>
+                  </div>
+
+                    <div class="form-group">
+                        <label for="quantity">Quantity</label>
+                        <input type="text" class="form-control" id="quantity" name="quantity"
+                               placeholder="Quantity">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cost_price">Cost Price</label>
+                        <input type="text" class="form-control" id="cost_price" name="cost_price"
+                               placeholder="Cost Price">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sell_price">Sell Price</label>
+                        <input type="text" class="form-control" id="sell_price" name="sell_price"
+                               placeholder="Sell Price">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="production_date">Production Date</label>
+                        <input type="text" class="form-control" name="production_date" id="production_date">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="expire_date">Expire Date</label>
+                        <input type="text" class="form-control" name="expire_date" id="expire_date">
+                    </div>
+
+                    <input type="submit" class="btn btn-primary" name="submit" value="Create" >
+            </form>
+            </div>
+        </div>
+        <br />
+        <br />
+        <div class="container" style="float: left; font-size:17px;">
+          <a href="/admin/batch">Back to List </a>
+        </div>
+        <!-- /.row -->
+        <br>
+        <hr>
+
+    </div>
+    <!-- /.container-fluid -->
+
+
+</div>
+<!-- /#page-wrapper -->
+
+<% include inc/view_footer.ejs %>

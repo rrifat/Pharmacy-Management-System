@@ -1,0 +1,87 @@
+<% include inc/view_header %>
+<% include inc/view_topmenu %>
+<% include inc/view_sidebar %>
+<div id="page-wrapper">
+
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header text-center">
+                    Add User
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <div class="col-lg-5 col-lg-offset-3">
+
+                <form action="" method="post">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" id="username" name="username">
+                    </div>
+                    <div class="form-group">
+                        <label for="user_email">Email</label>
+                        <input type="email" class="form-control" name="user_email" id="user_email">
+                    </div>
+                    <div class="form-group">
+                        <label for="user_gender">Gender &nbsp;&nbsp;</label>
+                        <label class="radio-inline"><input type="radio" name="user_gender" value="1">Male</label>
+                        <label class="radio-inline"><input type="radio" name="user_gender" value="0">Female</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="user_dob">Date of Birth</label>
+                        <input type="text" class="form-control" name="user_dob" id="user_dob"  onkeydown="return false">
+                    </div>
+                    <div class="form-group">
+                        <label for="user_age">Age</label>
+                        <input type="number" class="form-control" name="user_age" id="user_age">
+                    </div>
+                    <div class="form-group">
+                        <label for="user_contact">Contact</label>
+                        <input type="text" class="form-control" name="user_contact" id="user_contact">
+                    </div>
+                    <div class="form-group">
+                        <label for="blood_group">Blood Group</label>
+                        <select class="form-control" id="blood_group" name="blood_group">
+                            <option>Select Blood Group</option>
+                            <option>O+</option>
+                            <option>B+</option>
+                            <option>AB+</option>
+                            <option>A+</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="marital_status">Marital Status &nbsp;&nbsp;</label>
+                        <label class="radio-inline"><input type="radio" name="marital_status" value="1">Married</label>
+                        <label class="radio-inline"><input type="radio" name="marital_status" value="0">Unmarried</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" name="password" id="password">
+                    </div>
+                    <div class="form-group">
+                        <label for="usertype">User Type &nbsp;&nbsp;</label>
+                        <select class="form-control" id="usertype" name="usertype">
+                            <option>Admin</option>
+                            <option>User</option>
+                        </select>
+                    </div>
+                    <input type="submit" class="btn btn-primary btn-block" name="submit" value="Add">
+                </form>
+
+            </div>
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container-fluid -->
+
+</div>
+<!-- /#page-wrapper -->
+
+
+<% include inc/view_footer.ejs %>
